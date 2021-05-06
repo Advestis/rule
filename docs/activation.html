@@ -1,0 +1,1130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ruleskit.activation API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ruleskit.activation</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from abc import ABC
+from typing import Union
+import numpy as np
+import pandas as pd
+import ast
+import sys
+from .logger.logger import log as logger
+
+MAX_INT_32 = 2 ** 32
+
+
+class Activation(ABC):
+
+    SIZE_LIMIT = 0.000000139  # 0.25 / 1.8e6. From numerical experiment.
+    DTYPE = str
+
+    def __init__(self, activation: Union[np.ndarray, int, str] = None, length: int = None, optimize: bool = True):
+        &#34;&#34;&#34; Compresses an activation vector into a str(list) describing its variations or an int corresponding to the
+         binary representation of the vector
+
+        stored data will be either a str(list):
+            Compression is done : First element of the list is the first value of the array last element of the list is
+            the length of the array The other elemnts are the coordinates that changed values
+        or a np.ndarray:
+            same as str(list) but the list is casted into np.array instead of str
+        or an int:
+            taking the input vector [1 0 0 1 0 0 0 1 1...], converts it to binary string representation :
+            &#34;100100011...&#34; then cast it into int using int(s, 2)
+
+        The method will choose how to store the data based on the size (in MB) of the compressed list : if it is
+        superior to a certain limit, the int will take less memory and is prefered. If compression is used and
+        dtype is np.ndarray, will check that numbers present in the compressed vector can be stored as int32 to gain
+        memory. Else, uses int64.
+
+        The limit upon which integer is prefered was estimated from an activation vector of 1.8e6 elements,
+        where the int version took 0.25 MB
+
+        Parameters
+        ----------
+        activation: Union[np.ndarray, int, str]
+            If np.ndarray : Of the form [0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1], or compressed vector
+            If str : compressed vector
+            If int : Integer represented by the binary number that is the activation vector
+        length: int
+            Only valid if &#39;value&#39; is an integer. An activation vector stored as an integer has lost the information
+            about its size : [0 0 0 1 0 0 0 1 1...] to nit gives 100011... which in turn gives back [1 0 0 0 1 1...].
+            To get the leading zeros back, one must specify the length of the activation vector.
+        optimize: bool
+            Only relevent &#39;value&#39; is an integer. In that case, will check whether using compression saves up memory.
+            Else, does not check and uses integer. Note that is optimize is True, entropy is computed.
+        &#34;&#34;&#34;
+        self.length = None  # Will be set by init methods
+        self._entropy = None  # Will be set if activation is not an integer or if optimize is True
+        self.data_format = None  # Will be set by init methods
+        self.data = None  # Will be set by init methods
+        self._ones = None  # Will be set if &#34;activation&#34; is the raw activation vector
+        self._rel_entropy = None  # Will be set if activation is not an integer or if optimize is True
+        self._nones = None  # Will be set if activation is not an integer or if optimize is True
+        self._coverage = None
+
+        if isinstance(activation, str) and &#34;,&#34; not in activation:  # activation is actualy an integer, stored as an int
+            activation = int(activation)
+
+        if isinstance(activation, int):
+            self._init_with_integer(activation, Activation.DTYPE, length, optimize)
+
+        elif isinstance(activation, str):
+            self._init_with_str(activation)
+        elif isinstance(activation, np.ndarray):
+            if activation[-1] &gt; 1:
+                self._init_with_compressed_array(activation)
+            else:
+                self._init_with_raw(activation, Activation.DTYPE)
+        else:
+            raise TypeError(f&#34;An activation can only be a np.ndarray, and int or a str. Got {type(activation)}.&#34;)
+
+    def _init_with_integer(self, value: int, dtype: type, length: int = None, optimize: bool = True):
+
+        &#34;&#34;&#34;
+        Will set
+            if Optimize is True:
+              * self._nones (number of ones in the activation)
+              * self.length
+              * if optimize is True : self._entropy and self._rel_entropy
+              * self.data_format to &#34;integer&#34; or &#34;compressed_str&#34; or &#34;compressed_array&#34; depending on what takes less
+                memory
+              * self.data as an integer, a str or an array
+            else:
+              * self.data as an integer
+              * self.data_format to &#34;integer&#34;
+
+        &#34;&#34;&#34;
+
+        if length is None:
+            raise ValueError(&#34;When giving an integer to Activation, you must also specify its length.&#34;)
+
+        logger.debug(f&#34;Activation vector is an int&#34;)
+        self.length = length
+
+        if optimize:
+            raw = self._int_to_array(value)
+            self._nones = np.count_nonzero(raw == 1)
+            compressed = self._compress(raw, dtype=dtype)
+            if dtype == str:
+                self._entropy = len(ast.literal_eval(compressed)) - 2
+            else:
+                self._entropy = len(compressed) - 2
+            self._rel_entropy = self._entropy / self.length
+            sizeof = sys.getsizeof(compressed) / 1e6
+            if (sizeof / self.length) &gt; Activation.SIZE_LIMIT:
+                self.data = value
+                self.data_format = &#34;integer&#34;
+            else:
+                self.data = compressed
+                if dtype == str:
+                    self.data_format = &#34;compressed_str&#34;
+                else:
+                    self.data_format = &#34;compressed_array&#34;
+        else:
+            self.data = value
+            self.data_format = &#34;integer&#34;
+
+    def _init_with_str(self, value: str):
+        &#34;&#34;&#34;
+        will set :
+          * self.data as a compressed str
+          * self.data_format as &#34;compressed_str&#34;
+          * self._entropy and self._rel_entropy
+          * self.length
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Activation vector is a compressed str&#34;)
+        evaluated = np.array(ast.literal_eval(value))
+        self.data = value
+        self._entropy = len(evaluated) - 2
+        self.length = evaluated[-1]
+        self._rel_entropy = self._entropy / self.length
+        self.data_format = &#34;compressed_str&#34;
+
+    def _init_with_compressed_array(self, value: np.ndarray):
+        &#34;&#34;&#34;
+        will set :
+          * self.data as a compressed array
+          * self.data_format as &#34;compressed_array&#34;
+          * self._entropy and self._rel_entropy
+          * self.length
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Activation vector is a compressed array&#34;)
+        self.data = value
+        self._entropy = len(value) - 2
+        self.length = value[-1]
+        self._rel_entropy = self._entropy / self.length
+        self.data_format = &#34;compressed_array&#34;
+
+    def _init_with_raw(self, value: np.ndarray, dtype: type):
+        &#34;&#34;&#34;
+        will set :
+          * self.data as an integer or a compressed array/str depending on what takes less memory and on what dtype is
+          * self.data_format as &#34;integer&#34;, &#34;compressed_array&#34; or &#34;compressed_str&#34;
+          * self._entropy and self._rel_entropy
+          * self.length
+          * self._nones
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Activation vector is raw&#34;)
+        self.length = len(value)
+        self._nones = np.count_nonzero(value == 1)
+        compressed = self._compress(value, dtype=dtype)
+        if dtype is str:
+            self._entropy = len(compressed.split(&#34;,&#34;)) - 2
+        else:
+            self._entropy = len(compressed) - 2
+        self._rel_entropy = self._entropy / self.length
+        sizeof = sys.getsizeof(compressed) / 1e6
+        logger.debug(f&#34;Using int activation representation&#34;)
+        if (sizeof / len(value)) &gt; Activation.SIZE_LIMIT:
+            self.data = self._array_to_int(value)
+            self.data_format = &#34;integer&#34;
+        else:
+            logger.debug(f&#34;Using compressed activation representation&#34;)
+            self.data = compressed
+            if dtype == str:
+                self.data_format = &#34;compressed_str&#34;
+            else:
+                self.data_format = &#34;compressed_array&#34;
+
+    def __and__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            return Activation(self.data &amp; other.data, length=self.length)
+        else:
+            return Activation(self.raw * other.raw)
+
+    def __or__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            return Activation(self.data or other.data, length=self.length)
+        else:
+            return Activation(np.logical_or(self.raw, other.raw, length=self.length).astype(&#34;int32&#34;))
+
+    def __add__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            val_xor = self.data ^ other.data
+            val_and = self.data &amp; other.data
+            val = val_xor ^ val_and
+        else:
+            val_xor = np.logical_xor(self.raw, other.raw)
+            val_and = self.raw * other.raw
+            val = np.logical_xor(val_xor, val_and).astype(&#34;int32&#34;)
+        return Activation(val, length=self.length)
+
+    def __sub__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            return Activation((self.data ^ other.data) &amp; self.data, length=self.length)
+        else:
+            return Activation(np.logical_xor(self.raw, other.raw).astype(&#34;int32&#34;) * self.raw, length=self.length)
+
+    def __len__(self):
+        return self.length
+
+    def _int_to_array(self, value: int = None) -&gt; np.ndarray:
+        &#34;&#34;&#34;From a value of the form 45786542 (int), which is the base 10 representation of the binary form of an
+        activation vector, returns the initial vector.
+        &#34;&#34;&#34;
+        if value is None:
+            act = np.fromiter(bin(self.data)[2:], dtype=int)
+        else:
+            act = np.fromiter(bin(value)[2:], dtype=int)
+
+        if len(act) &gt; self.length:
+            raise ValueError(
+                &#34;After using int_to_array, I ended up with an activation vector bigger than the specified &#34;
+                &#34;max length. This should not happend as the max length should have been set by the indexing &#34;
+                &#34;of x earlier in your code&#34;
+            )
+        act_bis = np.zeros(self.length)
+        act_bis[self.length - len(act):] = act
+        return act_bis
+
+    def _decompress(self, value: Union[str, np.ndarray] = None) -&gt; np.ndarray:
+        &#34;&#34;&#34;Will return the original activation vector, and set self._nones and self._ones&#34;&#34;&#34;
+        if value is None:
+            if self.data_format == &#34;compressed_str&#34;:
+                act = ast.literal_eval(self.data)
+            elif self.data_format == &#34;compressed_array&#34;:
+                act = self.data
+            else:
+                raise TypeError(&#34;Cannot decompress an activation vector which data format is not compressed&#34;)
+        else:
+            if isinstance(value, str):
+                act = ast.literal_eval(value)
+            else:
+                act = value
+
+        length = act[-1]
+        s = np.zeros(length)
+        ones = []
+        n_ones = 0
+        previous_value = 0
+        previous_index = 0
+
+        compute_nones = self._nones is None
+        compute_ones = self._ones is None
+
+        if act[0] == 1:
+            previous_value = 1
+            s[0] = 1
+        if len(act) == 2:
+            if act[0] == 1:
+                self._nones = 1
+                self._ones = [pd.IndexSlice[0:1]]
+                return np.array(s, dtype=int)
+            else:
+                self._nones = 0
+                self._ones = []
+                return np.array(s, dtype=int)
+
+        for index in act[1:]:
+            if previous_value == 0:
+                previous_index = index
+                previous_value = 1
+            else:
+                if compute_nones:
+                    n_ones += index - previous_index
+                if compute_ones:
+                    ones.append(pd.IndexSlice[previous_index:index])
+                s[previous_index:index] = np.ones(index - previous_index)
+                previous_index = index
+                previous_value = 0
+
+        if compute_nones:
+            self._nones = n_ones
+            self._coverage = self._nones / self.length
+
+        if compute_ones:
+            self._ones = ones
+        return np.array(s, dtype=&#34;int32&#34;)
+
+    def __contains__(self, other: &#34;Activation&#34;) -&gt; bool:
+        # TODO : pytests (for vmargot)
+        nones_intersection = (self &amp; other).nones
+        if nones_intersection &lt; min(self.nones, other.nones):
+            return False
+        return True
+
+    @staticmethod
+    def _compress(value: np.ndarray, dtype: type = str) -&gt; Union[np.ndarray, str]:
+        &#34;&#34;&#34;Transforms a raw activation vector to a compressed one.
+
+        A compressed vector is a collection of integers starting by the initial value of the raw vector (0 or 1) and
+        ending with its size. The other integers in the compression are the positions in the raw vector where the
+        vector value changes. This stores all the information and saves up memory if the vector is constant over
+        large periods of time.
+
+        The compressed vector can be stored as a str looking like &#34;0, 12, 456, ..., 47782&#34; or as a numpy array of
+        integers. What storage to use is specified by the &#34;dtype&#34; argument.
+        &#34;&#34;&#34;
+        value = value.astype(int)
+        to_ret = [value[0]]
+        diff_arr = abs(np.diff(value))
+        to_ret += list(np.where(diff_arr == 1)[0] + 1)
+        to_ret.append(len(value))
+        if dtype == str:
+            to_ret = str(to_ret).replace(&#34; &#34;, &#34;&#34;).replace(&#34;[&#34;, &#34;&#34;).replace(&#34;]&#34;, &#34;&#34;)
+        else:
+            if to_ret[-1] &lt; MAX_INT_32:
+                to_ret = np.array(to_ret, dtype=&#34;int32&#34;)
+            else:
+                to_ret = np.array(to_ret, dtype=&#34;int64&#34;)
+        return to_ret
+
+    @staticmethod
+    def _array_to_int(value: np.ndarray) -&gt; int:
+        &#34;&#34;&#34;Casts a raw activation vector into the integer represented by its binary form
+
+        Examples
+        --------
+        &gt;&gt;&gt; from ruleskit import Activation
+        &gt;&gt;&gt; Activation._array_to_int(np.array([0, 1, 1, 0]))
+        6  # the binary number &#39;0110&#39; is 6 in base 10
+        &#34;&#34;&#34;
+        return int(&#34;&#34;.join(str(i) for i in value.astype(&#39;int&#39;)), 2)
+
+    @property
+    def raw(self) -&gt; np.ndarray:
+        if self.data_format == &#34;integer&#34;:
+            return self._int_to_array()
+        else:
+            return self._decompress()  # will also set self._ones and self._nones
+
+    @property
+    def ones(self) -&gt; int:
+        &#34;&#34;&#34;self._ones might not be set since it can only be set when decompressing a compressed vector&#34;&#34;&#34;
+        if self._ones is None:
+            _ = self.raw  # calling raw will compute nones and ones
+        return self._ones
+
+    @property
+    def nones(self) -&gt; int:
+        &#34;&#34;&#34;self._nones might not be set since it can only be set at object creation if the full array was given&#34;&#34;&#34;
+        if self._nones is None:
+            if self.data_format == &#34;integer&#34;:
+                self._nones = bin(self.data).count(&#34;1&#34;)  # faster than calling &#34;raw&#34;
+            else:
+                _ = self.raw  # calling raw will compute nones
+
+        if self._coverage is None:
+            self._coverage = self._nones / self.length
+        return self._nones
+
+    @property
+    def entropy(self) -&gt; int:
+        if self._entropy is None:
+            if self.data_format == &#34;integer&#34;:
+                compressed = self._compress(self.raw)
+                self._entropy = len(ast.literal_eval(compressed)) - 2
+            else:
+                raise ValueError(
+                    &#34;Data format is not integer and yet entropy is not set. There is a problem in the &#34;
+                    &#34;Activation class, please contact its maintainer.&#34;
+                )
+        if self._rel_entropy is None:
+            self._rel_entropy = self._entropy / self.length
+        return self._entropy
+
+    @property
+    def rel_entropy(self) -&gt; float:
+        if self._rel_entropy is None:
+            _ = self.entropy  # will set self._rel_entropy
+        return self._rel_entropy
+
+    @property
+    def coverage(self) -&gt; float:
+        if self._coverage is None:
+            _ = self.nones  # will set self._coverage
+        return self._coverage
+
+    @property
+    def as_int(self):
+        if self.data_format == &#34;integer&#34;:
+            return self.data
+        else:
+            return self._array_to_int(self.raw)
+
+    @property
+    def as_compressed_array(self):
+        if self.data_format == &#34;compressed_array&#34;:
+            return self.data
+        else:
+            return self._compress(self.raw, dtype=np.ndarray)
+
+    @property
+    def as_compressed_str(self):
+        if self.data_format == &#34;compressed_str&#34;:
+            return self.data
+        else:
+            return self._compress(self.raw, dtype=str)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="ruleskit.activation.Activation"><code class="flex name class">
+<span>class <span class="ident">Activation</span></span>
+<span>(</span><span>activation: Union[numpy.ndarray, int, str] = None, length: int = None, optimize: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Helper class that provides a standard way to create an ABC using
+inheritance.</p>
+<p>Compresses an activation vector into a str(list) describing its variations or an int corresponding to the
+binary representation of the vector</p>
+<p>stored data will be either a str(list):
+Compression is done : First element of the list is the first value of the array last element of the list is
+the length of the array The other elemnts are the coordinates that changed values
+or a np.ndarray:
+same as str(list) but the list is casted into np.array instead of str
+or an int:
+taking the input vector [1 0 0 1 0 0 0 1 1&hellip;], converts it to binary string representation :
+"100100011&hellip;" then cast it into int using int(s, 2)</p>
+<p>The method will choose how to store the data based on the size (in MB) of the compressed list : if it is
+superior to a certain limit, the int will take less memory and is prefered. If compression is used and
+dtype is np.ndarray, will check that numbers present in the compressed vector can be stored as int32 to gain
+memory. Else, uses int64.</p>
+<p>The limit upon which integer is prefered was estimated from an activation vector of 1.8e6 elements,
+where the int version took 0.25 MB</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>activation</code></strong> :&ensp;<code>Union[np.ndarray, int, str]</code></dt>
+<dd>If np.ndarray : Of the form [0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1], or compressed vector
+If str : compressed vector
+If int : Integer represented by the binary number that is the activation vector</dd>
+<dt><strong><code>length</code></strong> :&ensp;<code>int</code></dt>
+<dd>Only valid if 'value' is an integer. An activation vector stored as an integer has lost the information
+about its size : [0 0 0 1 0 0 0 1 1&hellip;] to nit gives 100011&hellip; which in turn gives back [1 0 0 0 1 1&hellip;].
+To get the leading zeros back, one must specify the length of the activation vector.</dd>
+<dt><strong><code>optimize</code></strong> :&ensp;<code>bool</code></dt>
+<dd>Only relevent 'value' is an integer. In that case, will check whether using compression saves up memory.
+Else, does not check and uses integer. Note that is optimize is True, entropy is computed.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Activation(ABC):
+
+    SIZE_LIMIT = 0.000000139  # 0.25 / 1.8e6. From numerical experiment.
+    DTYPE = str
+
+    def __init__(self, activation: Union[np.ndarray, int, str] = None, length: int = None, optimize: bool = True):
+        &#34;&#34;&#34; Compresses an activation vector into a str(list) describing its variations or an int corresponding to the
+         binary representation of the vector
+
+        stored data will be either a str(list):
+            Compression is done : First element of the list is the first value of the array last element of the list is
+            the length of the array The other elemnts are the coordinates that changed values
+        or a np.ndarray:
+            same as str(list) but the list is casted into np.array instead of str
+        or an int:
+            taking the input vector [1 0 0 1 0 0 0 1 1...], converts it to binary string representation :
+            &#34;100100011...&#34; then cast it into int using int(s, 2)
+
+        The method will choose how to store the data based on the size (in MB) of the compressed list : if it is
+        superior to a certain limit, the int will take less memory and is prefered. If compression is used and
+        dtype is np.ndarray, will check that numbers present in the compressed vector can be stored as int32 to gain
+        memory. Else, uses int64.
+
+        The limit upon which integer is prefered was estimated from an activation vector of 1.8e6 elements,
+        where the int version took 0.25 MB
+
+        Parameters
+        ----------
+        activation: Union[np.ndarray, int, str]
+            If np.ndarray : Of the form [0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1], or compressed vector
+            If str : compressed vector
+            If int : Integer represented by the binary number that is the activation vector
+        length: int
+            Only valid if &#39;value&#39; is an integer. An activation vector stored as an integer has lost the information
+            about its size : [0 0 0 1 0 0 0 1 1...] to nit gives 100011... which in turn gives back [1 0 0 0 1 1...].
+            To get the leading zeros back, one must specify the length of the activation vector.
+        optimize: bool
+            Only relevent &#39;value&#39; is an integer. In that case, will check whether using compression saves up memory.
+            Else, does not check and uses integer. Note that is optimize is True, entropy is computed.
+        &#34;&#34;&#34;
+        self.length = None  # Will be set by init methods
+        self._entropy = None  # Will be set if activation is not an integer or if optimize is True
+        self.data_format = None  # Will be set by init methods
+        self.data = None  # Will be set by init methods
+        self._ones = None  # Will be set if &#34;activation&#34; is the raw activation vector
+        self._rel_entropy = None  # Will be set if activation is not an integer or if optimize is True
+        self._nones = None  # Will be set if activation is not an integer or if optimize is True
+        self._coverage = None
+
+        if isinstance(activation, str) and &#34;,&#34; not in activation:  # activation is actualy an integer, stored as an int
+            activation = int(activation)
+
+        if isinstance(activation, int):
+            self._init_with_integer(activation, Activation.DTYPE, length, optimize)
+
+        elif isinstance(activation, str):
+            self._init_with_str(activation)
+        elif isinstance(activation, np.ndarray):
+            if activation[-1] &gt; 1:
+                self._init_with_compressed_array(activation)
+            else:
+                self._init_with_raw(activation, Activation.DTYPE)
+        else:
+            raise TypeError(f&#34;An activation can only be a np.ndarray, and int or a str. Got {type(activation)}.&#34;)
+
+    def _init_with_integer(self, value: int, dtype: type, length: int = None, optimize: bool = True):
+
+        &#34;&#34;&#34;
+        Will set
+            if Optimize is True:
+              * self._nones (number of ones in the activation)
+              * self.length
+              * if optimize is True : self._entropy and self._rel_entropy
+              * self.data_format to &#34;integer&#34; or &#34;compressed_str&#34; or &#34;compressed_array&#34; depending on what takes less
+                memory
+              * self.data as an integer, a str or an array
+            else:
+              * self.data as an integer
+              * self.data_format to &#34;integer&#34;
+
+        &#34;&#34;&#34;
+
+        if length is None:
+            raise ValueError(&#34;When giving an integer to Activation, you must also specify its length.&#34;)
+
+        logger.debug(f&#34;Activation vector is an int&#34;)
+        self.length = length
+
+        if optimize:
+            raw = self._int_to_array(value)
+            self._nones = np.count_nonzero(raw == 1)
+            compressed = self._compress(raw, dtype=dtype)
+            if dtype == str:
+                self._entropy = len(ast.literal_eval(compressed)) - 2
+            else:
+                self._entropy = len(compressed) - 2
+            self._rel_entropy = self._entropy / self.length
+            sizeof = sys.getsizeof(compressed) / 1e6
+            if (sizeof / self.length) &gt; Activation.SIZE_LIMIT:
+                self.data = value
+                self.data_format = &#34;integer&#34;
+            else:
+                self.data = compressed
+                if dtype == str:
+                    self.data_format = &#34;compressed_str&#34;
+                else:
+                    self.data_format = &#34;compressed_array&#34;
+        else:
+            self.data = value
+            self.data_format = &#34;integer&#34;
+
+    def _init_with_str(self, value: str):
+        &#34;&#34;&#34;
+        will set :
+          * self.data as a compressed str
+          * self.data_format as &#34;compressed_str&#34;
+          * self._entropy and self._rel_entropy
+          * self.length
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Activation vector is a compressed str&#34;)
+        evaluated = np.array(ast.literal_eval(value))
+        self.data = value
+        self._entropy = len(evaluated) - 2
+        self.length = evaluated[-1]
+        self._rel_entropy = self._entropy / self.length
+        self.data_format = &#34;compressed_str&#34;
+
+    def _init_with_compressed_array(self, value: np.ndarray):
+        &#34;&#34;&#34;
+        will set :
+          * self.data as a compressed array
+          * self.data_format as &#34;compressed_array&#34;
+          * self._entropy and self._rel_entropy
+          * self.length
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Activation vector is a compressed array&#34;)
+        self.data = value
+        self._entropy = len(value) - 2
+        self.length = value[-1]
+        self._rel_entropy = self._entropy / self.length
+        self.data_format = &#34;compressed_array&#34;
+
+    def _init_with_raw(self, value: np.ndarray, dtype: type):
+        &#34;&#34;&#34;
+        will set :
+          * self.data as an integer or a compressed array/str depending on what takes less memory and on what dtype is
+          * self.data_format as &#34;integer&#34;, &#34;compressed_array&#34; or &#34;compressed_str&#34;
+          * self._entropy and self._rel_entropy
+          * self.length
+          * self._nones
+        &#34;&#34;&#34;
+        logger.debug(f&#34;Activation vector is raw&#34;)
+        self.length = len(value)
+        self._nones = np.count_nonzero(value == 1)
+        compressed = self._compress(value, dtype=dtype)
+        if dtype is str:
+            self._entropy = len(compressed.split(&#34;,&#34;)) - 2
+        else:
+            self._entropy = len(compressed) - 2
+        self._rel_entropy = self._entropy / self.length
+        sizeof = sys.getsizeof(compressed) / 1e6
+        logger.debug(f&#34;Using int activation representation&#34;)
+        if (sizeof / len(value)) &gt; Activation.SIZE_LIMIT:
+            self.data = self._array_to_int(value)
+            self.data_format = &#34;integer&#34;
+        else:
+            logger.debug(f&#34;Using compressed activation representation&#34;)
+            self.data = compressed
+            if dtype == str:
+                self.data_format = &#34;compressed_str&#34;
+            else:
+                self.data_format = &#34;compressed_array&#34;
+
+    def __and__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            return Activation(self.data &amp; other.data, length=self.length)
+        else:
+            return Activation(self.raw * other.raw)
+
+    def __or__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            return Activation(self.data or other.data, length=self.length)
+        else:
+            return Activation(np.logical_or(self.raw, other.raw, length=self.length).astype(&#34;int32&#34;))
+
+    def __add__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            val_xor = self.data ^ other.data
+            val_and = self.data &amp; other.data
+            val = val_xor ^ val_and
+        else:
+            val_xor = np.logical_xor(self.raw, other.raw)
+            val_and = self.raw * other.raw
+            val = np.logical_xor(val_xor, val_and).astype(&#34;int32&#34;)
+        return Activation(val, length=self.length)
+
+    def __sub__(self, other: &#34;Activation&#34;) -&gt; &#34;Activation&#34;:
+        if self.length != other.length:
+            raise ValueError(f&#34;Activations have different lengths. Left is {self.length}, right is {other.length}&#34;)
+        if self.data_format == &#34;integer&#34; and other.data_format == &#34;integer&#34;:
+            return Activation((self.data ^ other.data) &amp; self.data, length=self.length)
+        else:
+            return Activation(np.logical_xor(self.raw, other.raw).astype(&#34;int32&#34;) * self.raw, length=self.length)
+
+    def __len__(self):
+        return self.length
+
+    def _int_to_array(self, value: int = None) -&gt; np.ndarray:
+        &#34;&#34;&#34;From a value of the form 45786542 (int), which is the base 10 representation of the binary form of an
+        activation vector, returns the initial vector.
+        &#34;&#34;&#34;
+        if value is None:
+            act = np.fromiter(bin(self.data)[2:], dtype=int)
+        else:
+            act = np.fromiter(bin(value)[2:], dtype=int)
+
+        if len(act) &gt; self.length:
+            raise ValueError(
+                &#34;After using int_to_array, I ended up with an activation vector bigger than the specified &#34;
+                &#34;max length. This should not happend as the max length should have been set by the indexing &#34;
+                &#34;of x earlier in your code&#34;
+            )
+        act_bis = np.zeros(self.length)
+        act_bis[self.length - len(act):] = act
+        return act_bis
+
+    def _decompress(self, value: Union[str, np.ndarray] = None) -&gt; np.ndarray:
+        &#34;&#34;&#34;Will return the original activation vector, and set self._nones and self._ones&#34;&#34;&#34;
+        if value is None:
+            if self.data_format == &#34;compressed_str&#34;:
+                act = ast.literal_eval(self.data)
+            elif self.data_format == &#34;compressed_array&#34;:
+                act = self.data
+            else:
+                raise TypeError(&#34;Cannot decompress an activation vector which data format is not compressed&#34;)
+        else:
+            if isinstance(value, str):
+                act = ast.literal_eval(value)
+            else:
+                act = value
+
+        length = act[-1]
+        s = np.zeros(length)
+        ones = []
+        n_ones = 0
+        previous_value = 0
+        previous_index = 0
+
+        compute_nones = self._nones is None
+        compute_ones = self._ones is None
+
+        if act[0] == 1:
+            previous_value = 1
+            s[0] = 1
+        if len(act) == 2:
+            if act[0] == 1:
+                self._nones = 1
+                self._ones = [pd.IndexSlice[0:1]]
+                return np.array(s, dtype=int)
+            else:
+                self._nones = 0
+                self._ones = []
+                return np.array(s, dtype=int)
+
+        for index in act[1:]:
+            if previous_value == 0:
+                previous_index = index
+                previous_value = 1
+            else:
+                if compute_nones:
+                    n_ones += index - previous_index
+                if compute_ones:
+                    ones.append(pd.IndexSlice[previous_index:index])
+                s[previous_index:index] = np.ones(index - previous_index)
+                previous_index = index
+                previous_value = 0
+
+        if compute_nones:
+            self._nones = n_ones
+            self._coverage = self._nones / self.length
+
+        if compute_ones:
+            self._ones = ones
+        return np.array(s, dtype=&#34;int32&#34;)
+
+    def __contains__(self, other: &#34;Activation&#34;) -&gt; bool:
+        # TODO : pytests (for vmargot)
+        nones_intersection = (self &amp; other).nones
+        if nones_intersection &lt; min(self.nones, other.nones):
+            return False
+        return True
+
+    @staticmethod
+    def _compress(value: np.ndarray, dtype: type = str) -&gt; Union[np.ndarray, str]:
+        &#34;&#34;&#34;Transforms a raw activation vector to a compressed one.
+
+        A compressed vector is a collection of integers starting by the initial value of the raw vector (0 or 1) and
+        ending with its size. The other integers in the compression are the positions in the raw vector where the
+        vector value changes. This stores all the information and saves up memory if the vector is constant over
+        large periods of time.
+
+        The compressed vector can be stored as a str looking like &#34;0, 12, 456, ..., 47782&#34; or as a numpy array of
+        integers. What storage to use is specified by the &#34;dtype&#34; argument.
+        &#34;&#34;&#34;
+        value = value.astype(int)
+        to_ret = [value[0]]
+        diff_arr = abs(np.diff(value))
+        to_ret += list(np.where(diff_arr == 1)[0] + 1)
+        to_ret.append(len(value))
+        if dtype == str:
+            to_ret = str(to_ret).replace(&#34; &#34;, &#34;&#34;).replace(&#34;[&#34;, &#34;&#34;).replace(&#34;]&#34;, &#34;&#34;)
+        else:
+            if to_ret[-1] &lt; MAX_INT_32:
+                to_ret = np.array(to_ret, dtype=&#34;int32&#34;)
+            else:
+                to_ret = np.array(to_ret, dtype=&#34;int64&#34;)
+        return to_ret
+
+    @staticmethod
+    def _array_to_int(value: np.ndarray) -&gt; int:
+        &#34;&#34;&#34;Casts a raw activation vector into the integer represented by its binary form
+
+        Examples
+        --------
+        &gt;&gt;&gt; from ruleskit import Activation
+        &gt;&gt;&gt; Activation._array_to_int(np.array([0, 1, 1, 0]))
+        6  # the binary number &#39;0110&#39; is 6 in base 10
+        &#34;&#34;&#34;
+        return int(&#34;&#34;.join(str(i) for i in value.astype(&#39;int&#39;)), 2)
+
+    @property
+    def raw(self) -&gt; np.ndarray:
+        if self.data_format == &#34;integer&#34;:
+            return self._int_to_array()
+        else:
+            return self._decompress()  # will also set self._ones and self._nones
+
+    @property
+    def ones(self) -&gt; int:
+        &#34;&#34;&#34;self._ones might not be set since it can only be set when decompressing a compressed vector&#34;&#34;&#34;
+        if self._ones is None:
+            _ = self.raw  # calling raw will compute nones and ones
+        return self._ones
+
+    @property
+    def nones(self) -&gt; int:
+        &#34;&#34;&#34;self._nones might not be set since it can only be set at object creation if the full array was given&#34;&#34;&#34;
+        if self._nones is None:
+            if self.data_format == &#34;integer&#34;:
+                self._nones = bin(self.data).count(&#34;1&#34;)  # faster than calling &#34;raw&#34;
+            else:
+                _ = self.raw  # calling raw will compute nones
+
+        if self._coverage is None:
+            self._coverage = self._nones / self.length
+        return self._nones
+
+    @property
+    def entropy(self) -&gt; int:
+        if self._entropy is None:
+            if self.data_format == &#34;integer&#34;:
+                compressed = self._compress(self.raw)
+                self._entropy = len(ast.literal_eval(compressed)) - 2
+            else:
+                raise ValueError(
+                    &#34;Data format is not integer and yet entropy is not set. There is a problem in the &#34;
+                    &#34;Activation class, please contact its maintainer.&#34;
+                )
+        if self._rel_entropy is None:
+            self._rel_entropy = self._entropy / self.length
+        return self._entropy
+
+    @property
+    def rel_entropy(self) -&gt; float:
+        if self._rel_entropy is None:
+            _ = self.entropy  # will set self._rel_entropy
+        return self._rel_entropy
+
+    @property
+    def coverage(self) -&gt; float:
+        if self._coverage is None:
+            _ = self.nones  # will set self._coverage
+        return self._coverage
+
+    @property
+    def as_int(self):
+        if self.data_format == &#34;integer&#34;:
+            return self.data
+        else:
+            return self._array_to_int(self.raw)
+
+    @property
+    def as_compressed_array(self):
+        if self.data_format == &#34;compressed_array&#34;:
+            return self.data
+        else:
+            return self._compress(self.raw, dtype=np.ndarray)
+
+    @property
+    def as_compressed_str(self):
+        if self.data_format == &#34;compressed_str&#34;:
+            return self.data
+        else:
+            return self._compress(self.raw, dtype=str)</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>abc.ABC</li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="ruleskit.activation.Activation.DTYPE"><code class="name">var <span class="ident">DTYPE</span></code></dt>
+<dd>
+<div class="desc"><p>str(object='') -&gt; str
+str(bytes_or_buffer[, encoding[, errors]]) -&gt; str</p>
+<p>Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.<strong>str</strong>() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.</p></div>
+</dd>
+<dt id="ruleskit.activation.Activation.SIZE_LIMIT"><code class="name">var <span class="ident">SIZE_LIMIT</span></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Instance variables</h3>
+<dl>
+<dt id="ruleskit.activation.Activation.as_compressed_array"><code class="name">var <span class="ident">as_compressed_array</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def as_compressed_array(self):
+    if self.data_format == &#34;compressed_array&#34;:
+        return self.data
+    else:
+        return self._compress(self.raw, dtype=np.ndarray)</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.as_compressed_str"><code class="name">var <span class="ident">as_compressed_str</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def as_compressed_str(self):
+    if self.data_format == &#34;compressed_str&#34;:
+        return self.data
+    else:
+        return self._compress(self.raw, dtype=str)</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.as_int"><code class="name">var <span class="ident">as_int</span></code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def as_int(self):
+    if self.data_format == &#34;integer&#34;:
+        return self.data
+    else:
+        return self._array_to_int(self.raw)</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.coverage"><code class="name">var <span class="ident">coverage</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def coverage(self) -&gt; float:
+    if self._coverage is None:
+        _ = self.nones  # will set self._coverage
+    return self._coverage</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.entropy"><code class="name">var <span class="ident">entropy</span> : int</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def entropy(self) -&gt; int:
+    if self._entropy is None:
+        if self.data_format == &#34;integer&#34;:
+            compressed = self._compress(self.raw)
+            self._entropy = len(ast.literal_eval(compressed)) - 2
+        else:
+            raise ValueError(
+                &#34;Data format is not integer and yet entropy is not set. There is a problem in the &#34;
+                &#34;Activation class, please contact its maintainer.&#34;
+            )
+    if self._rel_entropy is None:
+        self._rel_entropy = self._entropy / self.length
+    return self._entropy</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.nones"><code class="name">var <span class="ident">nones</span> : int</code></dt>
+<dd>
+<div class="desc"><p>self._nones might not be set since it can only be set at object creation if the full array was given</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def nones(self) -&gt; int:
+    &#34;&#34;&#34;self._nones might not be set since it can only be set at object creation if the full array was given&#34;&#34;&#34;
+    if self._nones is None:
+        if self.data_format == &#34;integer&#34;:
+            self._nones = bin(self.data).count(&#34;1&#34;)  # faster than calling &#34;raw&#34;
+        else:
+            _ = self.raw  # calling raw will compute nones
+
+    if self._coverage is None:
+        self._coverage = self._nones / self.length
+    return self._nones</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.ones"><code class="name">var <span class="ident">ones</span> : int</code></dt>
+<dd>
+<div class="desc"><p>self._ones might not be set since it can only be set when decompressing a compressed vector</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def ones(self) -&gt; int:
+    &#34;&#34;&#34;self._ones might not be set since it can only be set when decompressing a compressed vector&#34;&#34;&#34;
+    if self._ones is None:
+        _ = self.raw  # calling raw will compute nones and ones
+    return self._ones</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.raw"><code class="name">var <span class="ident">raw</span> : numpy.ndarray</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def raw(self) -&gt; np.ndarray:
+    if self.data_format == &#34;integer&#34;:
+        return self._int_to_array()
+    else:
+        return self._decompress()  # will also set self._ones and self._nones</code></pre>
+</details>
+</dd>
+<dt id="ruleskit.activation.Activation.rel_entropy"><code class="name">var <span class="ident">rel_entropy</span> : float</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def rel_entropy(self) -&gt; float:
+    if self._rel_entropy is None:
+        _ = self.entropy  # will set self._rel_entropy
+    return self._rel_entropy</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ruleskit" href="index.html">ruleskit</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="ruleskit.activation.Activation" href="#ruleskit.activation.Activation">Activation</a></code></h4>
+<ul class="two-column">
+<li><code><a title="ruleskit.activation.Activation.DTYPE" href="#ruleskit.activation.Activation.DTYPE">DTYPE</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.SIZE_LIMIT" href="#ruleskit.activation.Activation.SIZE_LIMIT">SIZE_LIMIT</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.as_compressed_array" href="#ruleskit.activation.Activation.as_compressed_array">as_compressed_array</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.as_compressed_str" href="#ruleskit.activation.Activation.as_compressed_str">as_compressed_str</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.as_int" href="#ruleskit.activation.Activation.as_int">as_int</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.coverage" href="#ruleskit.activation.Activation.coverage">coverage</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.entropy" href="#ruleskit.activation.Activation.entropy">entropy</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.nones" href="#ruleskit.activation.Activation.nones">nones</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.ones" href="#ruleskit.activation.Activation.ones">ones</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.raw" href="#ruleskit.activation.Activation.raw">raw</a></code></li>
+<li><code><a title="ruleskit.activation.Activation.rel_entropy" href="#ruleskit.activation.Activation.rel_entropy">rel_entropy</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
